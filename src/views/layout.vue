@@ -17,7 +17,7 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1" @click='goUser'>用户管理</el-menu-item>
-              <el-menu-item index="1-2">权限管理</el-menu-item>
+              <el-menu-item index="1-2">角色管理</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -84,7 +84,7 @@ export default {
       }
     },
     goUser() {
-      location.href= '/#/user'
+      location.href= '/v/user'
     },
     logout() {
       location.href = '/logout'

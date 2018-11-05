@@ -8,7 +8,7 @@ module.exports = appInfo => {
 
   // add your config here
   config.middleware = ['proxy'];
-  config.baseUrl = 'http://localhost:7001/';
+  config.baseUrl = 'http://bcms.com/';
   config.security = {
     csrf: {
       enable: false,
@@ -38,26 +38,27 @@ module.exports = appInfo => {
     },
   };
 
+  var targetHost = 'http://localhost:8080';
   config.proxy = {
     targets: {
       '/(.*).css': {
-        target: 'http://localhost:8080',
+        target: targetHost,
         changeOrigin: true,
       },
       '/(.*).js': {
-        target: 'http://localhost:8080',
+        target: targetHost,
         changeOrigin: true,
       },
       '/(.*).json': {
-        target: 'http://localhost:8080',
+        target: targetHost,
         changeOrigin: true,
       },
       '/(.*).woff': {
-        target: 'http://localhost:8080',
+        target: targetHost,
         changeOrigin: true,
       },
       '/(.*).ttf': {
-        target: 'http://localhost:8080',
+        target: targetHost,
         changeOrigin: true,
       }
     }

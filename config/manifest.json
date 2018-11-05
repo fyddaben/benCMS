@@ -1,23 +1,24 @@
 {
   "app": {
-    "js": "http://localhost:7001/app.js"
+    "js": "http://bcms.com/app.js"
   },
   "": {
     "js": [
-      "http://localhost:7001/0.js",
-      "http://localhost:7001/1.js",
-      "http://localhost:7001/2.js",
-      "http://localhost:7001/3.js",
-      "http://localhost:7001/4.js",
-      "http://localhost:7001/lib/vue.js"
+      "http://bcms.com/0.js",
+      "http://bcms.com/1.js",
+      "http://bcms.com/2.js",
+      "http://bcms.com/3.js",
+      "http://bcms.com/4.js",
+      "http://bcms.com/lib/ele.js",
+      "http://bcms.com/lib/vue.js"
     ],
-    "woff": "http://localhost:7001/fonts/element-icons.2fad952a.woff",
-    "ttf": "http://localhost:7001/fonts/element-icons.6f0a7632.ttf",
-    "html": "http://localhost:7001/index.html",
-    "css": "http://localhost:7001/lib/ele.css",
+    "woff": "http://bcms.com/fonts/element-icons.2fad952a.woff",
+    "ttf": "http://bcms.com/fonts/element-icons.6f0a7632.ttf",
+    "html": "http://bcms.com/index.html",
+    "css": "http://bcms.com/lib/ele.css",
     "json": [
-      "http://localhost:7001/01e78c42d7688dd0f327.hot-update.json",
-      "http://localhost:7001/474394509033aab0f03b.hot-update.json"
+      "http://bcms.com/b063bdd04329f713807a.hot-update.json",
+      "http://bcms.com/ea3d59cbcaf6ae1b70c5.hot-update.json"
     ]
   }
 }

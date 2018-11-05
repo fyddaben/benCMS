@@ -41,8 +41,7 @@
         label="操作"
         width="100">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
+          <el-button @click="editUser(scope.row.id)" type="text" size="small">编辑</el-button>
         </template>
       </el-table-column>
   </el-table>
@@ -61,21 +60,25 @@ const axios = require('axios');
 export default {
   data() {
     return {
-      tableData: [{
-        createtime: '2018-09-09 12:00:00',
-        username: 'daben',
-        realname: '大奔',
-        rolename: '上帝'
-      }],
+      tableData: [],
       baseurl: ''
     }
   },
   methods: {
     adduser() {
-      location.href= '/#/useradd'
+      location.href= '/v/useradd'
+    },
+    editUser(id) {
+      location.href = '/v/useradd?uid='+id
     }
   },
   mounted() {
+    let that = this
+    axios.get('/api/queryuser')
+    .then(function (response) {
+      let data = response.data
+      that.tableData = data.result
+    })
   }
 }
 </script>

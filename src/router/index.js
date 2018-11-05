@@ -5,7 +5,8 @@ import Main  from './main'
 Vue.use(Router)
 
 const router = new Router({
-  routes: [...Main]
+  routes: [...Main],
+  mode: 'history',
 })
 router.beforeEach((to, from, next) => {
   console.log(to)

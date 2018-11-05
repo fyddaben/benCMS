@@ -2,10 +2,10 @@ const Index = () => import('@/views/index.vue')
 const Layout = () => import('@/views/layout.vue')
 const User = () => import('@/views/user.vue')
 const UserAdd = () => import('@/views/useradd.vue')
-export default [
+const mainObj = [
   {
     name: 'entrance',
-    path: '/',
+    path: '/v',
     redirect: { name: 'home' },
     component: Layout,
     children: [
@@ -29,3 +29,4 @@ export default [
     ]
   }
 ]
+export default mainObj

@@ -5,13 +5,18 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', app.middlewares.checkauth(), controller.home.index);
+  router.get('/v/*', app.middlewares.checkauth(), controller.home.index);
+  router.redirect('/', '/v/home', 302);
   router.get('/login',controller.home.login);
   router.get('/logout',controller.home.logout);
   router.post('/login', app.passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/v',
     failureRedirect: '/login?up_error=true'
   }));
 
   // api
+  router.get('/api/queryuser', controller.api.queryUser)
+  router.post('/api/adduser', controller.api.addUser)
+  router.post('/api/updateuser', controller.api.updateUser)
+
 };
