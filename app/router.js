@@ -18,5 +18,8 @@ module.exports = app => {
   router.get('/api/queryuser', controller.api.queryUser)
   router.post('/api/adduser', controller.api.addUser)
   router.post('/api/updateuser', controller.api.updateUser)
+  router.post('/api/addrole', controller.api.addRole)
+  router.get('/api/queryrole', controller.api.queryRole)
+  router.post('/api/updaterole', controller.api.updateRole)
 
 };

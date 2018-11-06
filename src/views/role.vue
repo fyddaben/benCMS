@@ -48,17 +48,25 @@ const axios = require('axios');
 export default {
   data() {
     return {
-      tableData: [{
-        createtime: '2018-08-08 12:00:00',
-        rolename: 'daben',
-      }],
+      tableData: [],
       baseurl: ''
     }
   },
   methods: {
     addrole() {
       location.href = '/v/roleadd'
+    },
+    editUser(id) {
+      location.href = '/v/roleadd?rid='+id
     }
+  },
+  mounted() {
+    let that = this
+    axios.get('/api/queryrole')
+    .then(function (response) {
+      let data = response.data
+      that.tableData = data.result
+    })
   }
 }
 </script>

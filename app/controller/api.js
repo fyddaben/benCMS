@@ -39,6 +39,43 @@ class ApiController extends Controller {
     }
     ctx.status = 200
   }
+  // 查询角色
+  async queryRole() {
+    const {app, ctx} = this
+    var param = ctx.query;
+    const result = await  app.mysql.select('role', {
+      where: param
+    })
+    this.ctx.body = {
+      result
+    }
+    this.ctx.status = 200
+  }
+  //添加角色
+  async addRole() {
+    const {app, ctx} = this
+    var params = Object.assign(ctx.request.body, {
+      createtime: app.mysql.literals.now,
+      updatetime: app.mysql.literals.now,
+    })
+    const result = await app.mysql.insert('role', params)
+    ctx.body = {
+      code: 200
+    }
+    ctx.status = 200
+  }
+  // 修改角色
+  async updateRole() {
+    const {app, ctx} = this
+    var params = Object.assign(ctx.request.body, {
+      updatetime: app.mysql.literals.now,
+    })
+    const result = await app.mysql.update('role', params);
+    ctx.body = {
+      code: 200
+    }
+    ctx.status = 200
+  }
 }
 
 module.exports = ApiController;

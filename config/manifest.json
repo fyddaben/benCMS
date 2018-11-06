@@ -10,15 +10,17 @@
       "http://bcms.com/3.js",
       "http://bcms.com/4.js",
       "http://bcms.com/5.js",
-      "http://bcms.com/6.js"
+      "http://bcms.com/6.js",
+      "http://bcms.com/lib/ele.js",
+      "http://bcms.com/lib/vue.js"
     ],
     "woff": "http://bcms.com/fonts/element-icons.2fad952a.woff",
     "ttf": "http://bcms.com/fonts/element-icons.6f0a7632.ttf",
     "html": "http://bcms.com/index.html",
     "css": "http://bcms.com/lib/ele.css",
     "json": [
-      "http://bcms.com/59682729600868ee9d62.hot-update.json",
-      "http://bcms.com/8761412dbd65552e7844.hot-update.json"
+      "http://bcms.com/344dae0db25ac6984a6f.hot-update.json",
+      "http://bcms.com/af30fe3b77a37c77418b.hot-update.json"
     ]
   }
 }
