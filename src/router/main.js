@@ -2,6 +2,8 @@ const Index = () => import('@/views/index.vue')
 const Layout = () => import('@/views/layout.vue')
 const User = () => import('@/views/user.vue')
 const UserAdd = () => import('@/views/useradd.vue')
+const Role = () => import('@/views/role.vue')
+const RoleAdd = () => import('@/views/roleadd.vue')
 const mainObj = [
   {
     name: 'entrance',
@@ -25,6 +27,14 @@ const mainObj = [
         name: 'useredit',
         path: 'useredit',
         component: UserAdd
+      }, {
+        name: 'role',
+        path: 'role',
+        component: Role
+      }, {
+        name: 'roleadd',
+        path: 'roleadd',
+        component: RoleAdd
       }
     ]
   }
