@@ -60,16 +60,7 @@ export default {
       hasSub: false,
       //用户id
       uid: '',
-      roleArr: [{
-        _id: 1,
-        value: '管理员'
-      }, {
-        _id: 2,
-        value: '家长'
-      }, {
-        _id: 3,
-        value: '学生'
-      }],
+      roleArr: [],
       ruleForm: {
         // 编辑的时候，无法修改
         username: '',
@@ -120,11 +111,24 @@ export default {
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
+    },
+    getRole() {
+      let that =this
+      axios.get('/api/queryrole').then(function(response) {
+        let result = response.data.result
+        result.map(function(res) {
+          that.roleArr.push({
+            _id: res.id,
+            value: res.rolename
+          })
+        })
+      })
     }
   },
   mounted() {
     var _id = this.$route.query.uid
     let that = this
+    that.getRole()
     if (_id) {
       this.uid = _id
       axios.get('/api/queryuser?id=' + _id)

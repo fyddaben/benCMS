@@ -13,26 +13,32 @@ const mainObj = [
     children: [
       {
         name: 'home',
+        rname: '首页',
         path: 'home',
         component: Index
       }, {
         name: 'user',
+        rname: '用户列表',
         path: 'user',
         component: User
       }, {
         name: 'useradd',
+        rname: '用户添加',
         path: 'useradd',
         component: UserAdd
       }, {
         name: 'useredit',
+        rname: '用户编辑',
         path: 'useredit',
         component: UserAdd
       }, {
         name: 'role',
+        rname: '角色列表',
         path: 'role',
         component: Role
       }, {
         name: 'roleadd',
+        rname: '角色增加',
         path: 'roleadd',
         component: RoleAdd
       }

@@ -7,7 +7,7 @@
     </el-breadcrumb>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="user-form">
       <el-form-item label="角色名"  prop="rolename">
-        <el-input v-model="ruleForm.rolename" :disabled="uid?true: false" ></el-input>
+        <el-input v-model="ruleForm.rolename" :disabled="rid?true: false" ></el-input>
       </el-form-item>
       <el-form-item label="权限列表"  prop="powerlist">
         <el-transfer  :titles="['权限列表', '选择结果']" v-model="ruleForm.powerlist" :data="allpower"></el-transfer>
@@ -62,12 +62,13 @@ export default {
         if (valid) {
           if (!that.hasSub) {
             that.hasSub = true
-            if (that.uid) {
+            if (that.rid) {
               axios.post('/api/updaterole', {
+                id: that.rid,
                 rolename: that.ruleForm.rolename,
                 powerlist: JSON.stringify(that.ruleForm.powerlist)
               }).then(function (response) {
-                location.href = '/v/role'
+                //location.href = '/v/role'
               })
             }else{
               axios.post('/api/addrole', {
@@ -89,7 +90,7 @@ export default {
     RouterList[0].children.map((val)=> {
       allpower.push({
         key: '/v/' + val.path,
-        label: val.path
+        label: val.rname
       })
     })
     this.allpower = allpower
