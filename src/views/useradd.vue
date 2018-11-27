@@ -136,7 +136,6 @@ export default {
         let data = response.data
         that.ruleForm = data.result[0]
         delete that.ruleForm.createtime
-        delete that.ruleForm.updatetime
       })
     }
   }

@@ -16,6 +16,10 @@ class HomeController extends Controller {
     this.ctx.logout()
     this.ctx.redirect('/login')
   }
+  async xxx() {
+    console.log('xxx ok')
+    await this.ctx.render('xxx.html', {url:this.ctx.app.config.baseUrl});
+  }
   async login() {
     await this.ctx.render('login.html', {url:this.ctx.app.config.baseUrl});
   }

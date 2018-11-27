@@ -14,6 +14,24 @@ class ApiController extends Controller {
     }
     this.ctx.status = 200
   }
+  // 获取用户详细信息
+  async queryUserDetail() {
+    const {app, ctx} = this
+    var param = ctx.query
+    var _id = param.id
+    let result = ''
+    if (!_id) {
+      result = await  app.mysql.query('select a.id,a.username,a.realname,a.createtime,b.rolename from user a left join role b on a.roleid = b.id order by createtime')
+    } else {
+      result = await  app.mysql.query('select a.id,a.username,a.realname,a.createtime,b.rolename from user a left join role b on a.roleid = b.id order by createtime where a.id=?',[_id])
+    }
+    ctx.body = {
+      code: 200,
+      result
+    }
+    this.ctx.status = 200
+
+  }
   // 添加用户
   async addUser() {
     const {app, ctx} = this

@@ -69,12 +69,12 @@ export default {
       location.href= '/v/useradd'
     },
     editUser(id) {
-      location.href = '/v/useradd?uid='+id
+      location.href = '/v/useredit?uid='+id
     }
   },
   mounted() {
     let that = this
-    axios.get('/api/queryuser')
+    axios.get('/api/queryuserdetail')
     .then(function (response) {
       let data = response.data
       that.tableData = data.result

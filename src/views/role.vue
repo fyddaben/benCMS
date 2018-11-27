@@ -57,7 +57,7 @@ export default {
       location.href = '/v/roleadd'
     },
     editUser(id) {
-      location.href = '/v/roleadd?rid='+id
+      location.href = '/v/roleedit?rid='+id
     }
   },
   mounted() {

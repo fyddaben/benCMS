@@ -3,6 +3,7 @@ const Layout = () => import('@/views/layout.vue')
 const User = () => import('@/views/user.vue')
 const UserAdd = () => import('@/views/useradd.vue')
 const Role = () => import('@/views/role.vue')
+const Demo = () => import('@/views/demo.vue')
 const RoleAdd = () => import('@/views/roleadd.vue')
 const mainObj = [
   {
@@ -16,6 +17,11 @@ const mainObj = [
         rname: '首页',
         path: 'home',
         component: Index
+      }, {
+        name: 'demo',
+        rname: 'Demo页面',
+        path: 'demo',
+        component: Demo
       }, {
         name: 'user',
         rname: '用户列表',
@@ -40,6 +46,11 @@ const mainObj = [
         name: 'roleadd',
         rname: '角色增加',
         path: 'roleadd',
+        component: RoleAdd
+      }, {
+        name: 'roleedit',
+        rname: '角色编辑',
+        path: 'roleedit',
         component: RoleAdd
       }
     ]

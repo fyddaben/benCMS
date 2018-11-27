@@ -68,7 +68,7 @@ export default {
                 rolename: that.ruleForm.rolename,
                 powerlist: JSON.stringify(that.ruleForm.powerlist)
               }).then(function (response) {
-                //location.href = '/v/role'
+                location.href = '/v/role'
               })
             }else{
               axios.post('/api/addrole', {

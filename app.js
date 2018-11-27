@@ -33,13 +33,10 @@ module.exports = app => {
 
   // 反序列化后把用户信息从 session 中取出来，反查数据库拿到完整信息
   app.passport.deserializeUser(async (ctx, user) => {
-    const results = await app.mysql.select('user', {
-      where: {
-        id: user.id
-      }
-    })
+    const results = await  app.mysql.query('select a.id,a.username,a.realname,a.createtime,b.rolename,b.powerlist from user a left join role b on a.roleid = b.id where a.id=? order by createtime ',[user.id])
     var newuser = {
       id: user.id,
+      powerlist: results[0].powerlist,
       username: results[0].username,
       realname: results[0].realname
     }

@@ -9,13 +9,15 @@ module.exports = app => {
   router.redirect('/', '/v/home', 302);
   router.get('/login',controller.home.login);
   router.get('/logout',controller.home.logout);
+  router.get('/xxx.html',controller.home.xxx);
   router.post('/login', app.passport.authenticate('local', {
-    successRedirect: '/v',
+    successRedirect: '/v/home',
     failureRedirect: '/login?up_error=true'
   }));
 
   // api
   router.get('/api/queryuser', controller.api.queryUser)
+  router.get('/api/queryuserdetail', controller.api.queryUserDetail)
   router.post('/api/adduser', controller.api.addUser)
   router.post('/api/updateuser', controller.api.updateUser)
   router.post('/api/addrole', controller.api.addRole)

@@ -9,7 +9,11 @@
     </el-header>
     <el-container>
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu  @select='handleOpen'>
+        <el-menu >
+          <el-menu-item index="2" @click='goDemo'>
+            <i class="el-icon-menu"></i>
+            <span slot="title">首页Demo</span>
+          </el-menu-item>
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -20,6 +24,7 @@
               <el-menu-item index="1-2" @click='goRole'>角色管理</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
+
         </el-menu>
       </el-aside>
       <el-main>
@@ -76,18 +81,14 @@ export default {
     }
   },
   methods: {
-    handleOpen(index) {
-      if (index == 2) {
-        this.$router.push({
-          path: '/'
-        });
-      }
-    },
     goUser() {
       location.href= '/v/user'
     },
     goRole() {
       location.href= '/v/role'
+    },
+    goDemo() {
+      location.href= '/v/demo'
     },
     logout() {
       location.href = '/logout'
