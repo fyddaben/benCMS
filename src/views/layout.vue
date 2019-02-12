@@ -20,8 +20,14 @@
               <span>系统设置</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="1-1" @click='goUser'>用户管理</el-menu-item>
-              <el-menu-item index="1-2" @click='goRole'>角色管理</el-menu-item>
+              <el-menu-item index="1-1"  route='/v/user'>
+                <a href="/v/user">
+                  用户管理
+                </a>
+              </el-menu-item>
+              <el-menu-item index="1-2" @click='goRole'>
+                角色管理
+              </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
@@ -71,6 +77,9 @@
 }
 .el-aside {
   color: #333;
+}
+a {
+  text-decoration: none;
 }
 </style>
 <script>
